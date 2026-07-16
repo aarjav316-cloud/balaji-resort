@@ -1,28 +1,36 @@
 @import "tailwindcss";
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*
+  All custom styles must live inside @layer base.
+  
+  Tailwind v4 puts its utilities inside @layer utilities.
+  CSS spec: unlayered styles ALWAYS override layered styles.
+  So any rule written outside a @layer (like * { padding: 0 })
+  will silently override every Tailwind utility class.
 
-body {
-  font-family:
-    "Geist",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  Tailwind v4 preflight already resets margin, padding,
+  and sets box-sizing: border-box — so the universal reset
+  is no longer needed.
+*/
 
-/* Hero Typography */
-.hero-heading {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-size: clamp(3rem, 5vw, 5.2rem);
-  letter-spacing: -0.03em;
-  line-height: 1;
+@layer base {
+  body {
+    font-family:
+      "Geist",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Hero Typography */
+  .hero-heading {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 5vw, 5.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
 }
