@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero";
 import EditorialIntro from "./components/EditorialIntro";
 import Accommodation from "./components/Accommodation";
+import EventVenues from "./components/EventVenues";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <EditorialIntro />
       <Accommodation />
+      <EventVenues />
     </div>
   );
 }
