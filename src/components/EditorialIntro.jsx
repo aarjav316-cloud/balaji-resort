@@ -56,7 +56,8 @@ function EditorialIntro() {
 
   return (
     <section 
-      ref={sectionRef} 
+      ref={sectionRef}
+      data-navbar-theme="light"
       className="w-full bg-[#E8E7E5] text-[#2E2925] py-[clamp(6rem,15vh,12rem)] px-[clamp(1.5rem,5vw,6rem)] flex justify-center"
     >
       <div className="max-w-[850px] w-full mx-auto flex flex-col items-center text-center">
