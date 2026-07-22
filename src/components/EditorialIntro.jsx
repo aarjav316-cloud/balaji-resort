@@ -58,7 +58,7 @@ function EditorialIntro() {
     <section 
       ref={sectionRef}
       data-navbar-theme="light"
-      className="w-full bg-[#E8E7E5] text-[#2E2925] py-[clamp(6rem,15vh,12rem)] px-[clamp(1.5rem,5vw,6rem)] flex justify-center"
+      className="w-full bg-[#E8E7E5] text-[#2E2925] pt-[clamp(6rem,15vh,12rem)] pb-[clamp(3rem,7.5vh,6rem)] px-[clamp(1.5rem,5vw,6rem)] flex justify-center"
     >
       <div className="max-w-[850px] w-full mx-auto flex flex-col items-center text-center">
         
