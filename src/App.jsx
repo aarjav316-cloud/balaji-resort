@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import EditorialIntro from "./components/EditorialIntro";
 import Accommodation from "./components/Accommodation";
 import EventVenues from "./components/EventVenues";
+import RooftopPool from "./components/RooftopPool";
+import SignatureRestaurant from "./components/SignatureRestaurant";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <EditorialIntro />
       <Accommodation />
       <EventVenues />
+      <RooftopPool />
+      <SignatureRestaurant />
     </div>
   );
 }

@@ -108,7 +108,7 @@ function EventVenues() {
     <section 
       ref={sectionRef}
       data-navbar-theme="light"
-      className="w-full bg-[#E8E7E5] text-[#2E2925] pt-[clamp(3rem,7.5vh,6rem)] pb-[clamp(6rem,15vh,12rem)] px-[clamp(1.5rem,5vw,6rem)]"
+      className="w-full bg-[#E8E7E5] text-[#2E2925] pt-[clamp(3rem,7.5vh,6rem)] pb-[clamp(3rem,7.5vh,6rem)] px-[clamp(1.5rem,5vw,6rem)]"
     >
       <div className="w-full mx-auto max-w-[1400px]">
         
