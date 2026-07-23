@@ -6,6 +6,7 @@ import EventVenues from "./components/EventVenues";
 import RooftopPool from "./components/RooftopPool";
 import SignatureRestaurant from "./components/SignatureRestaurant";
 import EventsWeHost from "./components/EventsWeHost";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <RooftopPool />
       <SignatureRestaurant />
       <EventsWeHost />
+      <Footer />
     </div>
   );
 }
