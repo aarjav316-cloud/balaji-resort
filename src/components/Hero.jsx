@@ -52,6 +52,7 @@ const Hero = () => {
 
   return (
     <section
+      id="hero"
       ref={sectionRef}
       data-navbar-theme="dark"
       className="relative h-screen w-full overflow-hidden"

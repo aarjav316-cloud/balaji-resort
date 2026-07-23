@@ -2,8 +2,15 @@ import { MapPin } from "lucide-react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 function Footer() {
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <footer className="w-full bg-[#2E2925] text-[#E8E7E5] pt-[clamp(5rem,12vh,8rem)] pb-[clamp(2.5rem,6vh,4rem)] px-[clamp(1.5rem,5vw,6rem)] flex flex-col">
+    <footer id="contact" className="w-full bg-[#2E2925] text-[#E8E7E5] pt-[clamp(5rem,12vh,8rem)] pb-[clamp(2.5rem,6vh,4rem)] px-[clamp(1.5rem,5vw,6rem)] flex flex-col">
       <div className="w-full mx-auto max-w-[1400px]">
         
         {/* Top 3-Column Layout */}
@@ -11,7 +18,11 @@ function Footer() {
           
           {/* Left Column - Brand & Address */}
           <div className="lg:col-span-5 flex flex-col items-center md:items-start">
-            <a href="/" className="uppercase text-lg md:text-xl tracking-[0.3em] font-light mb-6 opacity-90 hover:opacity-100 transition-opacity">
+            <a 
+              href="#hero" 
+              onClick={(e) => handleScroll(e, "#hero")}
+              className="uppercase text-lg md:text-xl tracking-[0.3em] font-light mb-6 opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
+            >
               Balaji Resort
             </a>
             <p className="text-[#E8E7E5]/70 font-light leading-relaxed max-w-[320px] mb-8 text-sm md:text-base">
@@ -40,11 +51,11 @@ function Footer() {
             </h4>
             <ul className="flex flex-col space-y-5 text-center md:text-left items-center md:items-start">
               {[
-                { name: "Home", href: "#home" },
+                { name: "Home", href: "#hero" },
                 { name: "About", href: "#about" },
                 { name: "Accommodation", href: "#accommodation" },
                 { name: "Event Venues", href: "#event-venues" },
-                { name: "Rooftop Pool Deck", href: "#rooftop" },
+                { name: "Rooftop Pool Deck", href: "#rooftop-pool" },
                 { name: "Restaurant", href: "#restaurant" },
                 { name: "Events We Host", href: "#events" },
                 { name: "Contact", href: "#contact" }
@@ -52,7 +63,8 @@ function Footer() {
                 <li key={idx}>
                   <a 
                     href={link.href}
-                    className="group relative inline-flex pb-1 text-[13px] md:text-sm font-light text-[#E8E7E5]/70 hover:text-[#E8E7E5] transition-colors duration-500"
+                    onClick={(e) => handleScroll(e, link.href)}
+                    className="group relative inline-flex pb-1 text-[13px] md:text-sm font-light text-[#E8E7E5]/70 hover:text-[#E8E7E5] transition-colors duration-500 cursor-pointer"
                   >
                     {link.name}
                     <span className="absolute left-0 bottom-0 w-full h-[1px] bg-[#E8E7E5]/20 origin-right transition-transform duration-500 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-left" />
