@@ -1,12 +1,24 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 import { X as CloseIcon } from "lucide-react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 /**
  * Navigation items — single source of truth.
  * Extracted so the render array and ref array stay in sync.
  */
-const NAV_ITEMS = ["The Resort", "Accommodations", "Dining", "Wellness", "Experiences"];
+const NAV_ITEMS = [
+  { label: "Home", target: "#hero" },
+  { label: "About", target: "#about" },
+  { label: "Accommodation", target: "#accommodation" },
+  { label: "Event Venues", target: "#event-venues" },
+  { label: "Rooftop Pool Deck", target: "#rooftop-pool" },
+  { label: "Restaurant", target: "#restaurant" },
+  { label: "Events We Host", target: "#events" },
+  { label: "Contact", target: "#contact" }
+];
 
 /**
  * Builds the opening GSAP timeline.
@@ -131,6 +143,22 @@ function MobileMenu({ isOpen, onClose }) {
     }
   }, [isOpen]);
 
+  // --------------- Navigation Click Handler ---------------
+  const handleNavClick = useCallback((e, targetId) => {
+    e.preventDefault();
+    if (onClose) onClose();
+
+    const navbar = document.querySelector('header');
+    const offsetHeight = navbar ? navbar.offsetHeight : 80;
+
+    gsap.to(window, {
+      duration: 1.2,
+      scrollTo: { y: targetId, offsetY: offsetHeight, autoKill: false },
+      ease: "power3.inOut",
+      delay: 0.1,
+    });
+  }, [onClose]);
+
   // --------------- Guard ---------------
   if (!mounted) return null;
 
@@ -177,14 +205,15 @@ function MobileMenu({ isOpen, onClose }) {
       {/* Navigation Links */}
       <nav className="flex-1 flex flex-col items-center justify-center space-y-8 md:space-y-12 pb-20">
         {NAV_ITEMS.map((item, i) => (
-          <div key={item} className="overflow-hidden py-1">
+          <div key={item.label} className="overflow-hidden py-1">
             <a
               ref={(el) => { linksRef.current[i] = el; }}
-              href={`/${item.toLowerCase().replace(" ", "-")}`}
+              href={item.target}
+              onClick={(e) => handleNavClick(e, item.target)}
               className="block uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-[0.2em] md:tracking-[0.25em] hover:text-white/50 transition-colors duration-700"
               style={{ opacity: 0 }}
             >
-              {item}
+              {item.label}
             </a>
           </div>
         ))}
