@@ -17,6 +17,7 @@ const NAV_ITEMS = [
   { label: "Rooftop Pool Deck", target: "#rooftop-pool" },
   { label: "Restaurant", target: "#restaurant" },
   { label: "Events We Host", target: "#events" },
+  { label: "Water Park", target: "#waterpark" },
   { label: "Contact", target: "#contact" }
 ];
 

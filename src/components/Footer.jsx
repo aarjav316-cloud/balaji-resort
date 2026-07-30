@@ -58,6 +58,7 @@ function Footer() {
                 { name: "Rooftop Pool Deck", href: "#rooftop-pool" },
                 { name: "Restaurant", href: "#restaurant" },
                 { name: "Events We Host", href: "#events" },
+                { name: "Water Park", href: "#waterpark" },
                 { name: "Contact", href: "#contact" }
               ].map((link, idx) => (
                 <li key={idx}>
