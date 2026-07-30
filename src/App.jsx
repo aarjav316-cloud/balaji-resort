@@ -7,6 +7,7 @@ import RooftopPool from "./components/RooftopPool";
 import SignatureRestaurant from "./components/SignatureRestaurant";
 import EventsWeHost from "./components/EventsWeHost";
 import WaterPark from "./components/WaterPark";
+import WaterParkGallery from "./components/WaterParkGallery";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <SignatureRestaurant />
       <EventsWeHost />
       <WaterPark />
+      <WaterParkGallery />
       <Footer />
     </div>
   );
